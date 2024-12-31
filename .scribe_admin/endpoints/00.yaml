@@ -1,0 +1,159 @@
+name: 'User Management'
+description: 'A group for managing users'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/admin/admin-resource-users
+    metadata:
+      groupName: 'User Management'
+      groupDescription: 'A group for managing users'
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      name:
+        name: name
+        description: 'Filter users by name'
+        required: false
+        example: John
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      name: John
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: eius
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: ''
+        required: false
+        example: kub.madyson@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: eius
+      email: kub.madyson@example.com
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":11,"name":"Mr. Anibal Toy PhD","email":"cpurdy@example.net","posts":[{"id":51,"title":"Repellendus perspiciatis ut fugiat doloribus.","content":"Saepe ad ea dolor sit necessitatibus laboriosam alias earum. Velit eveniet cumque iure. Exercitationem assumenda et enim. Expedita aut sed est blanditiis voluptatem officiis fugiat sit.\n\nCorporis ut totam dolore incidunt. Architecto at illum esse dolores omnis saepe. Sed ea tenetur hic possimus. Et voluptatum et deleniti esse. Vel quia velit et laudantium dolorem.\n\nEt facere et magnam. Voluptatem id hic sequi modi. Consequatur ut et enim et porro sunt."}]},{"id":12,"name":"River Botsford","email":"tracy83@example.com","posts":[{"id":52,"title":"Aperiam delectus fugiat quia architecto sed odio nobis.","content":"Et et nisi perferendis quis qui qui. Occaecati esse tenetur nostrum sunt. Et nam voluptas quia iste. Quam possimus voluptates quae eligendi aut minus.\n\nReprehenderit et illo ad necessitatibus alias soluta. Modi et quis id cumque itaque quam consequatur. Aliquid quia voluptatibus cum et aspernatur explicabo rem. Et sed possimus soluta in tempora culpa.\n\nA quia aliquid vitae quo. Laboriosam ipsum molestiae dolore qui non. Iste velit vitae ducimus."}]}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":10,"to":2,"total":2},"message":"Success"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields:
+      id:
+        name: id
+        description: 'The id of the newly created word'
+        required: true
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      posts.id:
+        name: posts.id
+        description: ''
+        required: true
+        example: null
+        type: 'The id of the newly created word'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/admin/admin-resource-users/{id}'
+    metadata:
+      groupName: 'User Management'
+      groupDescription: 'A group for managing users'
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin resource user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":11,"name":"Imani Little","email":"pietro.morissette@example.net","posts":[{"id":51,"title":"Minus et laborum est consequatur et.","content":"Sapiente voluptatum beatae cum reprehenderit quia placeat omnis. Molestiae non quo incidunt nulla fugiat ut deleniti. Iste ducimus ratione dicta voluptas sit commodi.\n\nSimilique odit est occaecati eveniet architecto doloremque et nam. Ut vel ut culpa non omnis. Qui nemo repudiandae magnam.\n\nVel neque libero nulla doloribus consequatur eum. Sint quaerat rerum nam laudantium velit est. Qui qui eos facilis sit."}]},"message":"Success"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields:
+      id:
+        name: id
+        description: 'The id of the newly created word'
+        required: true
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      posts.id:
+        name: posts.id
+        description: ''
+        required: true
+        example: null
+        type: 'The id of the newly created word'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

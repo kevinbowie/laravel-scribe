@@ -1,0 +1,298 @@
+openapi: 3.0.3
+info:
+  title: 'Admin API Documentation'
+  description: 'API documentation for the Admin API.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/admin/admin-resource-users:
+    get:
+      summary: ''
+      operationId: getApiAdminAdminResourceUsers
+      description: ''
+      parameters:
+        -
+          in: query
+          name: name
+          description: 'Filter users by name'
+          example: John
+          required: false
+          schema:
+            type: string
+            description: 'Filter users by name'
+            example: John
+            nullable: false
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 11
+                      name: 'Mr. Anibal Toy PhD'
+                      email: cpurdy@example.net
+                      posts:
+                        -
+                          id: 51
+                          title: 'Repellendus perspiciatis ut fugiat doloribus.'
+                          content: "Saepe ad ea dolor sit necessitatibus laboriosam alias earum. Velit eveniet cumque iure. Exercitationem assumenda et enim. Expedita aut sed est blanditiis voluptatem officiis fugiat sit.\n\nCorporis ut totam dolore incidunt. Architecto at illum esse dolores omnis saepe. Sed ea tenetur hic possimus. Et voluptatum et deleniti esse. Vel quia velit et laudantium dolorem.\n\nEt facere et magnam. Voluptatem id hic sequi modi. Consequatur ut et enim et porro sunt."
+                    -
+                      id: 12
+                      name: 'River Botsford'
+                      email: tracy83@example.com
+                      posts:
+                        -
+                          id: 52
+                          title: 'Aperiam delectus fugiat quia architecto sed odio nobis.'
+                          content: "Et et nisi perferendis quis qui qui. Occaecati esse tenetur nostrum sunt. Et nam voluptas quia iste. Quam possimus voluptates quae eligendi aut minus.\n\nReprehenderit et illo ad necessitatibus alias soluta. Modi et quis id cumque itaque quam consequatur. Aliquid quia voluptatibus cum et aspernatur explicabo rem. Et sed possimus soluta in tempora culpa.\n\nA quia aliquid vitae quo. Laboriosam ipsum molestiae dolore qui non. Iste velit vitae ducimus."
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: 10
+                    to: 2
+                    total: 2
+                  message: Success
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 11
+                        name: 'Mr. Anibal Toy PhD'
+                        email: cpurdy@example.net
+                        posts:
+                          -
+                            id: 51
+                            title: 'Repellendus perspiciatis ut fugiat doloribus.'
+                            content: "Saepe ad ea dolor sit necessitatibus laboriosam alias earum. Velit eveniet cumque iure. Exercitationem assumenda et enim. Expedita aut sed est blanditiis voluptatem officiis fugiat sit.\n\nCorporis ut totam dolore incidunt. Architecto at illum esse dolores omnis saepe. Sed ea tenetur hic possimus. Et voluptatum et deleniti esse. Vel quia velit et laudantium dolorem.\n\nEt facere et magnam. Voluptatem id hic sequi modi. Consequatur ut et enim et porro sunt."
+                      -
+                        id: 12
+                        name: 'River Botsford'
+                        email: tracy83@example.com
+                        posts:
+                          -
+                            id: 52
+                            title: 'Aperiam delectus fugiat quia architecto sed odio nobis.'
+                            content: "Et et nisi perferendis quis qui qui. Occaecati esse tenetur nostrum sunt. Et nam voluptas quia iste. Quam possimus voluptates quae eligendi aut minus.\n\nReprehenderit et illo ad necessitatibus alias soluta. Modi et quis id cumque itaque quam consequatur. Aliquid quia voluptatibus cum et aspernatur explicabo rem. Et sed possimus soluta in tempora culpa.\n\nA quia aliquid vitae quo. Laboriosam ipsum molestiae dolore qui non. Iste velit vitae ducimus."
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 11
+                        name:
+                          type: string
+                          example: 'Mr. Anibal Toy PhD'
+                        email:
+                          type: string
+                          example: cpurdy@example.net
+                        posts:
+                          type: array
+                          example:
+                            -
+                              id: 51
+                              title: 'Repellendus perspiciatis ut fugiat doloribus.'
+                              content: "Saepe ad ea dolor sit necessitatibus laboriosam alias earum. Velit eveniet cumque iure. Exercitationem assumenda et enim. Expedita aut sed est blanditiis voluptatem officiis fugiat sit.\n\nCorporis ut totam dolore incidunt. Architecto at illum esse dolores omnis saepe. Sed ea tenetur hic possimus. Et voluptatum et deleniti esse. Vel quia velit et laudantium dolorem.\n\nEt facere et magnam. Voluptatem id hic sequi modi. Consequatur ut et enim et porro sunt."
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 51
+                              title:
+                                type: string
+                                example: 'Repellendus perspiciatis ut fugiat doloribus.'
+                              content:
+                                type: string
+                                example: "Saepe ad ea dolor sit necessitatibus laboriosam alias earum. Velit eveniet cumque iure. Exercitationem assumenda et enim. Expedita aut sed est blanditiis voluptatem officiis fugiat sit.\n\nCorporis ut totam dolore incidunt. Architecto at illum esse dolores omnis saepe. Sed ea tenetur hic possimus. Et voluptatum et deleniti esse. Vel quia velit et laudantium dolorem.\n\nEt facere et magnam. Voluptatem id hic sequi modi. Consequatur ut et enim et porro sunt."
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: '/?page=1'
+                      last:
+                        type: string
+                        example: '/?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: '/?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: /
+                      per_page:
+                        type: integer
+                        example: 10
+                      to:
+                        type: integer
+                        example: 2
+                      total:
+                        type: integer
+                        example: 2
+                  message:
+                    type: string
+                    example: Success
+      tags:
+        - 'User Management'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: eius
+                  nullable: false
+                email:
+                  type: string
+                  description: ''
+                  example: kub.madyson@example.com
+                  nullable: false
+      security: []
+  '/api/admin/admin-resource-users/{id}':
+    get:
+      summary: ''
+      operationId: getApiAdminAdminResourceUsersId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 11
+                    name: 'Imani Little'
+                    email: pietro.morissette@example.net
+                    posts:
+                      -
+                        id: 51
+                        title: 'Minus et laborum est consequatur et.'
+                        content: "Sapiente voluptatum beatae cum reprehenderit quia placeat omnis. Molestiae non quo incidunt nulla fugiat ut deleniti. Iste ducimus ratione dicta voluptas sit commodi.\n\nSimilique odit est occaecati eveniet architecto doloremque et nam. Ut vel ut culpa non omnis. Qui nemo repudiandae magnam.\n\nVel neque libero nulla doloribus consequatur eum. Sint quaerat rerum nam laudantium velit est. Qui qui eos facilis sit."
+                  message: Success
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 11
+                      name:
+                        type: string
+                        example: 'Imani Little'
+                      email:
+                        type: string
+                        example: pietro.morissette@example.net
+                      posts:
+                        type: array
+                        example:
+                          -
+                            id: 51
+                            title: 'Minus et laborum est consequatur et.'
+                            content: "Sapiente voluptatum beatae cum reprehenderit quia placeat omnis. Molestiae non quo incidunt nulla fugiat ut deleniti. Iste ducimus ratione dicta voluptas sit commodi.\n\nSimilique odit est occaecati eveniet architecto doloremque et nam. Ut vel ut culpa non omnis. Qui nemo repudiandae magnam.\n\nVel neque libero nulla doloribus consequatur eum. Sint quaerat rerum nam laudantium velit est. Qui qui eos facilis sit."
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 51
+                            title:
+                              type: string
+                              example: 'Minus et laborum est consequatur et.'
+                            content:
+                              type: string
+                              example: "Sapiente voluptatum beatae cum reprehenderit quia placeat omnis. Molestiae non quo incidunt nulla fugiat ut deleniti. Iste ducimus ratione dicta voluptas sit commodi.\n\nSimilique odit est occaecati eveniet architecto doloremque et nam. Ut vel ut culpa non omnis. Qui nemo repudiandae magnam.\n\nVel neque libero nulla doloribus consequatur eum. Sint quaerat rerum nam laudantium velit est. Qui qui eos facilis sit."
+                    required:
+                      - id
+                  message:
+                    type: string
+                    example: Success
+      tags:
+        - 'User Management'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the admin resource user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: 'User Management'
+    description: 'A group for managing users'

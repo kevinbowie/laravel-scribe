@@ -1,0 +1,113 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Admin API Documentation",
+        "_postman_id": "e88ace8a-d1e4-425d-bded-aed0b9bf331f",
+        "description": "API documentation for the Admin API.",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "User Management",
+            "description": "A group for managing users",
+            "item": [
+                {
+                    "name": "GET api\/admin\/admin-resource-users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/admin-resource-users",
+                            "query": [
+                                {
+                                    "key": "name",
+                                    "value": "John",
+                                    "description": "Filter users by name",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/admin\/admin-resource-users?name=John"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"eius\",\"email\":\"kub.madyson@example.com\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":11,\"name\":\"Mr. Anibal Toy PhD\",\"email\":\"cpurdy@example.net\",\"posts\":[{\"id\":51,\"title\":\"Repellendus perspiciatis ut fugiat doloribus.\",\"content\":\"Saepe ad ea dolor sit necessitatibus laboriosam alias earum. Velit eveniet cumque iure. Exercitationem assumenda et enim. Expedita aut sed est blanditiis voluptatem officiis fugiat sit.\\n\\nCorporis ut totam dolore incidunt. Architecto at illum esse dolores omnis saepe. Sed ea tenetur hic possimus. Et voluptatum et deleniti esse. Vel quia velit et laudantium dolorem.\\n\\nEt facere et magnam. Voluptatem id hic sequi modi. Consequatur ut et enim et porro sunt.\"}]},{\"id\":12,\"name\":\"River Botsford\",\"email\":\"tracy83@example.com\",\"posts\":[{\"id\":52,\"title\":\"Aperiam delectus fugiat quia architecto sed odio nobis.\",\"content\":\"Et et nisi perferendis quis qui qui. Occaecati esse tenetur nostrum sunt. Et nam voluptas quia iste. Quam possimus voluptates quae eligendi aut minus.\\n\\nReprehenderit et illo ad necessitatibus alias soluta. Modi et quis id cumque itaque quam consequatur. Aliquid quia voluptatibus cum et aspernatur explicabo rem. Et sed possimus soluta in tempora culpa.\\n\\nA quia aliquid vitae quo. Laboriosam ipsum molestiae dolore qui non. Iste velit vitae ducimus.\"}]}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":10,\"to\":2,\"total\":2},\"message\":\"Success\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/admin\/admin-resource-users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/admin-resource-users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/admin-resource-users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the admin resource user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":11,\"name\":\"Imani Little\",\"email\":\"pietro.morissette@example.net\",\"posts\":[{\"id\":51,\"title\":\"Minus et laborum est consequatur et.\",\"content\":\"Sapiente voluptatum beatae cum reprehenderit quia placeat omnis. Molestiae non quo incidunt nulla fugiat ut deleniti. Iste ducimus ratione dicta voluptas sit commodi.\\n\\nSimilique odit est occaecati eveniet architecto doloremque et nam. Ut vel ut culpa non omnis. Qui nemo repudiandae magnam.\\n\\nVel neque libero nulla doloribus consequatur eum. Sint quaerat rerum nam laudantium velit est. Qui qui eos facilis sit.\"}]},\"message\":\"Success\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

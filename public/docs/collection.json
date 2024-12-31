@@ -1,0 +1,318 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "720b8ba7-bdb5-4fc0-8a3a-a5979d754026",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Healthcheck",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/healthcheck",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/healthcheck"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Check that the service is up. If everything is okay, you'll get a 200 OK response.\n\nOtherwise, the request will fail with a 400 error, and a response listing the failed services.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"up\",\"services\":{\"database\":\"up\",\"redis\":\"up\"}}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\"status\": \"down\", \"services\": {\"database\": \"up\", \"redis\": \"down\"}}",
+                            "name": "Service is unhealthy"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/auth\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get users list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": " This endpoint allows you to get users list but not using UserResource.\n It's a really useful endpoint, and you should play around \n with it for a bit.\n <aside class=\"notice\">We mean it; you really should.\ud83d\ude15<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Miller Runolfsson\",\"email\":\"brau@example.com\"},{\"id\":2,\"name\":\"Lisa Reilly\",\"email\":\"noemi.kunde@example.net\"},{\"id\":3,\"name\":\"Shad Hirthe\",\"email\":\"stephan.rolfson@example.com\"},{\"id\":4,\"name\":\"Keely Braun\",\"email\":\"gabriella.casper@example.com\"},{\"id\":5,\"name\":\"Xzavier Cronin V\",\"email\":\"kianna.rath@example.com\"},{\"id\":6,\"name\":\"Kristin Wisozk DDS\",\"email\":\"gleichner.richmond@example.net\"},{\"id\":7,\"name\":\"Miss Shania Dare Jr.\",\"email\":\"kwintheiser@example.org\"},{\"id\":8,\"name\":\"Brett Kilback\",\"email\":\"hdoyle@example.org\"},{\"id\":9,\"name\":\"Mr. Raleigh Romaguera DVM\",\"email\":\"dewayne.padberg@example.com\"},{\"id\":10,\"name\":\"Derick Strosin PhD\",\"email\":\"allison52@example.com\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Testing\",\"email\":\"testing@example.com\"}}",
+                            "name": "success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\"message\":\"User not found\"}",
+                            "name": "user not found"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User Management",
+            "description": "A group for managing users",
+            "item": [
+                {
+                    "name": "GET api\/resource-users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resource-users",
+                            "query": [
+                                {
+                                    "key": "name",
+                                    "value": "John",
+                                    "description": "Filter users by name",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/resource-users?name=John"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"corporis\",\"email\":\"rosendo.wolff@example.net\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":11,\"name\":\"Laury Deckow\",\"email\":\"andre.padberg@example.org\",\"posts\":[{\"id\":51,\"title\":\"Saepe aut cum numquam.\",\"content\":\"Tempora nam illo eum sunt voluptate. Beatae culpa minus animi dolorum qui. Quaerat dolor voluptatum velit maxime.\\n\\nAutem ab rerum voluptatum soluta et. Fugiat laborum qui ut ut. Cum qui et reprehenderit nobis itaque accusamus nulla. Illum itaque ipsum recusandae dolorem hic quia ut.\\n\\nVoluptatem voluptas nisi distinctio aut omnis velit fugiat. Soluta expedita velit et rem. Autem amet doloremque alias eius dolores impedit maxime. Asperiores ea est et eum sint doloribus iusto. Aut ipsa sit voluptas ut deserunt.\"}]},{\"id\":12,\"name\":\"Mr. Carmine Treutel\",\"email\":\"clint84@example.org\",\"posts\":[{\"id\":52,\"title\":\"Odio dolorem dolor quo.\",\"content\":\"Sint deserunt vel placeat quis at. Consequatur architecto facilis recusandae. Dolores est quae libero rem.\\n\\nNon enim est temporibus fugiat. Debitis dolorem fugiat aut eligendi. Impedit rem qui architecto ea reiciendis facilis sequi et. Modi laudantium delectus unde delectus doloribus rerum unde.\\n\\nDolorem ut aperiam ut quia alias. Ut eum qui saepe praesentium eum magni. Aut quisquam consequatur molestiae hic dolor rem deleniti quia. Odit maxime provident non excepturi illum fuga.\"}]}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":10,\"to\":2,\"total\":2},\"message\":\"Success\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/resource-users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resource-users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resource-users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the resource user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":11,\"name\":\"Ashlynn Pouros Sr.\",\"email\":\"bailey.milton@example.org\",\"posts\":[{\"id\":51,\"title\":\"Numquam quas deserunt a.\",\"content\":\"Consequatur consectetur aliquam eum qui. Dolores consectetur velit aut rem vitae. Quia ratione est ipsam maiores et excepturi. Cumque quibusdam non reiciendis corrupti magni. Ut commodi quisquam dolor amet.\\n\\nExcepturi tenetur officiis ut magni. Officia odit et itaque perferendis cupiditate.\\n\\nAliquid excepturi fuga distinctio alias nihil quaerat consequatur. Repellendus cupiditate et voluptates non. Aliquam expedita ut et illo. Deleniti odit dolor illum fuga.\"}]},\"message\":\"Success\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
